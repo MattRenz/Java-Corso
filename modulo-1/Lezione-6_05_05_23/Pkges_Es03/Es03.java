@@ -18,15 +18,12 @@ import java.util.Scanner;
      * - PrintLibri() => stampa tutti i libri con i nomi dei rispettivi autori
      */
 
-
 public class Es03 {
     public static void main(String[] args) {
 
-        
-        
         Scanner input = new Scanner(System.in);
 
-        for (int i = 0;i < 2; i++){
+        for (int i = 0; i < 2; i++) {
 
             System.out.print("Nome: ");
             String nome = input.next();
@@ -42,18 +39,16 @@ public class Es03 {
             System.out.print("Scaffale: ");
             int scaffale = input.nextInt();
 
-
             Libro libro = new Libro(titolo, autore, scaffale);
 
             Biblioteca biblioteca = new Biblioteca();
 
             biblioteca.AddLibro(libro);
-        
 
             Biblioteca.StampaTuttiILibri();
 
         }
-     
+
     }
 
 }

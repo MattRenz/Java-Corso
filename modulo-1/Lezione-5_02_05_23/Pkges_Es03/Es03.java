@@ -21,75 +21,71 @@ con un attributo aggiuntivo chiamato
 
 public class Es03 {
     public static void main(String[] args) {
-        
+
         Scanner input = new Scanner(System.in);
 
         Veicolo[] veicoli = new Veicolo[2];
         Auto[] autoArray = new Auto[2];
-
 
         System.out.print("Inserire Auto o Veicolo (1-2): ");
         int scelta = input.nextInt();
 
         if (scelta == 2) {
 
-            for (int i = 0; i < veicoli.length; i++){
+            for (int i = 0; i < veicoli.length; i++) {
 
                 System.out.print("Marca: ");
                 String marca = input.next();
-    
+
                 System.out.print("Modello: ");
                 String modello = input.next();
-    
+
                 System.out.print("Anno: ");
                 int anno = input.nextInt();
-    
-    
+
                 Veicolo veicolo = new Veicolo(marca, modello, anno);
-                
+
                 veicoli[i] = veicolo;
-                
+
             }
 
-            for (int i = 0; i < veicoli.length; i++){
-                
+            for (int i = 0; i < veicoli.length; i++) {
+
                 System.out.println("");
                 veicoli[i].SchedaVeicolo();
             }
-            
+
         }
 
-        
         if (scelta == 1) {
 
-            for (int i = 0; i < autoArray.length; i++){
+            for (int i = 0; i < autoArray.length; i++) {
 
-            System.out.print("Marca: ");
-            String marca = input.next();
+                System.out.print("Marca: ");
+                String marca = input.next();
 
-            System.out.print("Modello: ");
-            String modello = input.next();
+                System.out.print("Modello: ");
+                String modello = input.next();
 
-            System.out.print("Anno: ");
-            int anno = input.nextInt();
+                System.out.print("Anno: ");
+                int anno = input.nextInt();
 
-            System.out.print("Numero porte: ");
-            int numPorte = input.nextInt();
+                System.out.print("Numero porte: ");
+                int numPorte = input.nextInt();
 
-            Auto auto = new Auto(marca, modello, anno, numPorte);
+                Auto auto = new Auto(marca, modello, anno, numPorte);
 
-            autoArray[i] = auto;
-            
+                autoArray[i] = auto;
+
             }
 
+            for (int i = 0; i < autoArray.length; i++) {
 
+                System.out.println("");
+                autoArray[i].ScehdaAuto();
+                ;
 
-        for (int i = 0; i < autoArray.length; i++){
-            
-            System.out.println("");
-            autoArray[i].ScehdaAuto();;
-           
-        }
+            }
 
         }
 

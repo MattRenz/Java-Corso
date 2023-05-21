@@ -30,12 +30,10 @@ package Pkges_Es06;
      * 
      */
 
-    
 public class Es06 {
     public static void main(String[] args) {
 
-
-        
+       // ESERCIZIO SU LEZIONE 6 
 
     }
 }
