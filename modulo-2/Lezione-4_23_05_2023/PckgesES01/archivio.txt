@@ -1,0 +1,3 @@
+Mario,Rossi,40,Medico
+Giovanni,Verdi,39,Cuoco
+Gentile,Fabriano,80,Pensionato
