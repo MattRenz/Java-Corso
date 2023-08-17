@@ -32,24 +32,25 @@ class Mia implements Comparable<Mia> {
     }
 
     int getEta() {
-        return eta; 
+        return eta;
     }
-    
+
 }
 
 public class App {
 
-    private static void Cambia(int i) {
-        i = 200;
-    }
+    // private static void Cambia(int i) {
+    // i = 200;
+    // }
 
-    private static void Cambia(List<Integer> li) {
-        li = Arrays.asList(1, 2, 3);
-    }
+    // private static void Cambia(List<Integer> li) {
+    // li = Arrays.asList(1, 2, 3);
+    // }
 
     public static void main(String[] args) {
 
-        /* Programmazione funzionale in Java
+        /*
+         * Programmazione funzionale in Java
          * Map rduce filter
          */
 
@@ -97,77 +98,74 @@ public class App {
         {
             List<Integer> li = Arrays.asList(3, 2, 6, 5, 8, 7, 9, 1, 3, 2, 5, 9, 0);
 
-            List<String> ls = Arrays.asList("string1", "string2", "string3", "string4", "string5", "string6", "string7", "string8");
+            List<String> ls = Arrays.asList("string1", "string2", "string3", "string4", "string5", "string6", "string7",
+                    "string8");
 
             List<Mia> lMia = Arrays.asList(
                     new Mia("Marco", "Rossi", 35),
                     new Mia("Andrea", "Palomino", 27),
                     new Mia("Luigi", "Caparotti", 33));
 
-            // MAP 
-            
+            // MAP
+
             // fare il reciproco degli elementi della lista li
 
             List<Double> reciproci = li.stream().map((Integer v) -> {
-                return 1.0/v;
+                return 1.0 / v;
             }).toList();
-            
+
             System.out.println(reciproci);
-            
+
             // Costruire una lista che contenga le lunghezzze delle stringhe presenti in ls
             List<Integer> lunghezza = ls.stream().map(
-                (String s) -> {
-                
-                    return s.length();
-                
-            }).toList();
+                    (String s) -> {
+
+                        return s.length();
+
+                    }).toList();
 
             System.out.println(lunghezza);
 
-            // Modificare gli oggetti di tipo Mia nella lista lmia, aggiungendo 5 anni all'eta
+            // Modificare gli oggetti di tipo Mia nella lista lmia, aggiungendo 5 anni
+            // all'eta
 
             List<Mia> leta = lMia.stream().map(
-                (Mia m) -> {
-                    m.eta += 5; // modifichiamo direttamente l'elemento della lista
-                    return m;
-                
-                }).toList();
-        
+                    (Mia m) -> {
+                        m.eta += 5; // modifichiamo direttamente l'elemento della lista
+                        return m;
+
+                    }).toList();
+
             System.out.println(leta);
 
-            // FILTER 
+            // FILTER
 
-            // Csa fa filter ? COnsente di eliminare elementi di una lista sneza modificare i valori
+            // Csa fa filter ? COnsente di eliminare elementi di una lista sneza modificare
+            // i valori
 
             // Sintassi lambda estesa
             List<Integer> limod = li.stream().filter(
-                (Integer v) -> {
+                    (Integer v) -> {
                         return v < 6;
-                
-                }).toList();
-       
+
+                    }).toList();
+
             // Sintassi lambda semplificata
 
             List<Integer> limods = li.stream().filter(v -> v < 6).toList();
             System.out.println(li); // Lista totale
             System.out.println(limods); // Lista con soli valori minori di 6
-            
-     
 
             // REDUCE
-            
+
             // reduce in genere fornics un solo valore aggregando gli elementi dello stream
 
             int v = li.stream().reduce(0, (c, p) -> c + p);
-            
-            System.out.println(v);
-            
-        }
-        
 
+            System.out.println(v);
+
+        }
 
     }
-
-    
 
 }
